@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bogus, Version=34.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.34.0.2\lib\net40\Bogus.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -51,11 +54,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\MyContext.cs" />
+    <Compile Include="Init\MyInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.COMMON\Project.COMMON.csproj">
+      <Project>{940f067b-9e9b-4da4-97a5-7b0cd7db357a}</Project>
+      <Name>Project.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
+      <Project>{f4978710-8a6f-4292-a72f-7bd3603dc7f9}</Project>
+      <Name>Project.ENTITIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.MAP\Project.MAP.csproj">
+      <Project>{19dd5ffc-dc40-4188-a7ca-db27cda735ab}</Project>
+      <Name>Project.MAP</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
