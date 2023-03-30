@@ -15,7 +15,7 @@ namespace Project.MVCUI.Controllers
         public HomeController()
         {
         }
-        public ActionResult Index()
+        public ActionResult Login()
         {
          
             return View();

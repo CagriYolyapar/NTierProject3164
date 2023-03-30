@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterOK</title>
+
+    <link href="~/OuterTools/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/OuterTools/js/jquery.js"></script>
+    <script src="~/OuterTools/js/bootstrap.js"></script>
+
+
+</head>
+<body>
+    <div class="jumbotron">
+        Tebrikler kayıt oldunuz...Lütfen email adresinize gönderdigimiz aktivasyon linkine tıklayarak hesabınızı aktif hale getiriniz...
+    </div>
+</body>
+</html>
+
+<script>
+
+    $(function () {
+        setTimeout(function () {
+
+            window.location = "/Register/RegisterNow";
+
+        },5000)
+    })
+
+
+</script>

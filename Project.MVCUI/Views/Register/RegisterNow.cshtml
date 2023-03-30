@@ -1,0 +1,68 @@
+﻿@model RegisterNowPageVM
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterNow</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/OuterTools/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/OuterTools/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/OuterTools/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/OuterTools/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/OuterTools/css/owl.carousel.css" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="~/OuterTools/css/style.css" rel="stylesheet">
+    <link href="~/OuterTools/css/style-responsive.css" rel="stylesheet" />
+</head>
+<body class="login-body">
+    <div class="container">
+
+        <h2>@ViewBag.ZatenVar</h2>
+
+
+        @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class="form-signin"}))
+        {
+            <br />
+
+            <center><h2>Üye olunuz</h2></center>
+
+            <div class="login-wrap">
+                 @Html.TextBoxFor(x => x.AppUser.UserName, new {@class="form-control",placeholder="Kullanıcı ismi belirleyin"})
+                @Html.PasswordFor(x => x.AppUser.Password, new {@class="form-control",placeholder="Sifre belirleyin"})
+                @Html.TextBoxFor(x => x.AppUser.Email, new {@class="form-control",placeholder="Email giriniz"})
+
+
+                <br />
+
+                Profil bilgileri (iste baglı)
+
+                <br />
+
+                @Html.TextBoxFor(x => x.Profile.FirstName, new {@class = "form-control",placeholder="İsminizi giriniz"})
+                @Html.TextBoxFor(x => x.Profile.LastName, new {@class="form-control",placeholder="Soyisim giriniz"})
+
+
+                <button class="btn btn-primary">Üye ol</button>
+
+                <div>
+                    @Html.ActionLink("Giriş yap","Login","Home")
+                </div>
+
+
+            </div>
+        }
+
+
+
+
+    </div>
+</body>
+</html>
