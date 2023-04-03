@@ -1,0 +1,13 @@
+﻿1=> Pure VM ve Page VMler mevcut yapılarda nasıl ayrılabilir(Eger bilerek ayrılmadılarsa ) bunu tespit edip projeyi refactor ediniz...
+
+
+2=>  Alpha(Sema,Berkay,Tugberk,JR. Burak,Yasemin) => Kargo API'i yaratın, Beta(Burak SR, Fatma, Altan,Furkan,Barkin)=> Tedarikci API , Charlie(Alaattin, Efkan, Batuhan, Erhan ve digerleri ) grubu mevcut E-Ticaret sitesinden  Alpha ve Beta'nın yazmıs olduğu API'lara istek gönderip talep belirtecek... 
+
+
+Kargo API => Sipariş Alma(Kargo olusturma)
+Kargo Sorgulama => (Nerede , ne zaman gelmesi tahmin ediliyor, Teslim edildi mi , Teslim alan kişi)
+
+
+---
+Tedarikci API => Tedarik İstegi Alma     
+Tedarik edilme durumu => (Nerede, kac tane istenmiş , ödenecek fiyat, Teslim edildi mi , ne zaman gelmesi tahmin ediliyor)

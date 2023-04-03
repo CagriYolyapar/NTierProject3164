@@ -5,6 +5,7 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{562797FE-9F59-4B84-9BC7-3FF5299E1064}"
 	ProjectSection(SolutionItems) = preProject
+		Odevler.txt = Odevler.txt
 		ProjeTeknikDokumantasyonu.txt = ProjeTeknikDokumantasyonu.txt
 	EndProjectSection
 EndProject
