@@ -26,7 +26,7 @@ namespace Project.MVCUI.Models.CustomTools
 
 
 
-                if(extension =="jpg" || extension == "gif"||extension == "png")
+                if(extension =="jpg"||extension =="jpeg" || extension == "gif"||extension == "png")
                 {
                     //Eger dosya ismi zaten varsa 
                     if (File.Exists(HttpContext.Current.Server.MapPath(serverPath + fileName)))

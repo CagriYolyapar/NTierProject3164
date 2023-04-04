@@ -75,6 +75,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
 
         public ActionResult UpdateCategory(int id)
         {
+            //Refactor
             return View(_cRep.Find(id));
         }
 

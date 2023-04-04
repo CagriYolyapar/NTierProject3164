@@ -1,6 +1,7 @@
 ﻿using Project.BLL.Repositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.MVCUI.Areas.Admin.Data.AdminPageVMs;
+using Project.MVCUI.Models.CustomTools;
 using Project.VM.PureVMs;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
 
         public ActionResult AddProduct()
         {
-            AdminCategoryListPageVM apvm = new AdminCategoryListPageVM
+            AdminAddProductPageVM apvm = new AdminAddProductPageVM
             {
                 Categories = _cRep.Select(x => new AdminCategoryVM
                 {
@@ -53,10 +54,11 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             };
             return View(apvm);
         }
-
+        //todo : Resim sergilenme sistemi, validation
         [HttpPost]
-        public ActionResult AddProduct(Product product)
+        public ActionResult AddProduct(Product product,HttpPostedFileBase image,string fileName)
         {
+            product.ImagePath = ImageUploader.UploadImage("/Pictures/",image,fileName);
             _pRep.Add(product);
             return RedirectToAction("ListProducts");
         }
@@ -64,16 +66,27 @@ namespace Project.MVCUI.Areas.Admin.Controllers
 
         public ActionResult UpdateProduct(int id)
         {
+            AdminAddProductPageVM apvm = new AdminAddProductPageVM
+            {
+                Categories = _cRep.Select(x=> new AdminCategoryVM 
+                {
+                ID  = x.ID,
+                CategoryName = x.CategoryName,
+                Description = x.Description
+                }).ToList(),
 
-            return View(_cRep.Find(id));
+                Product = _pRep.Find(id)
+            };
+            return View(apvm);
         }
 
         //Todo: VM refactoring unutulmasın...
 
-        //Todo: Resim güncelleme
+        //Todo: Odev Resim güncelleme
         [HttpPost]
        public ActionResult UpdateProduct(Product product)
         {
+         
             _pRep.Update(product);
             return RedirectToAction("ListProducts");
         }

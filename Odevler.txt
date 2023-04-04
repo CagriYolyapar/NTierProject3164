@@ -3,6 +3,8 @@
 
 2=>  Alpha(Sema,Berkay,Tugberk,JR. Burak,Yasemin) => Kargo API'i yaratın, Beta(Burak SR, Fatma, Altan,Furkan,Barkin)=> Tedarikci API , Charlie(Alaattin, Efkan, Batuhan, Erhan ve digerleri ) grubu mevcut E-Ticaret sitesinden  Alpha ve Beta'nın yazmıs olduğu API'lara istek gönderip talep belirtecek... 
 
+3=> UpdateProduct işleminde bir ürün güncellenecegi zaman eger kişi güncelleme kısmında bir resim secmediyse o ürünün eski resmi varsa  o kalsın, yeni resim sectiyse ürünün resmi güncellensin...Bir resim kaldır diye alan olusturun  eger o alan (input type='check') işaretliyse eski resim varsa da null hale gelsin...
+
 
 Kargo API => Sipariş Alma(Kargo olusturma)
 Kargo Sorgulama => (Nerede , ne zaman gelmesi tahmin ediliyor, Teslim edildi mi , Teslim alan kişi)
