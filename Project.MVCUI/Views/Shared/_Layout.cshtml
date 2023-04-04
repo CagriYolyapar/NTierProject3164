@@ -268,7 +268,14 @@
                             <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
                             <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
                             <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
-                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+
+                            @RenderSection("Sepet", false) <!--Burada actıgımız RenderSection doldurulması zorunlu bir alan degildir(false)...Yani isterseniz oldugu gibi bırakabilirsiniz...Ancak bir View'da dilerseniz buraya ek bir tasarım yapılmasını da saglayabilirsiniz...Bunun icin section'in ismini vermeniz yeterlidir...Orada tasarlanan tasarım direkt buraya koyulacaktır-->
+                            @if (Session["member"] != null)
+                            {
+                                <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                            }
+
+
                         </ul>
                     </li>
                     <!-- user login dropdown end -->

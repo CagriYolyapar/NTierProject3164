@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Project.MVCUI.Areas.Admin.Data.AdminPageVMs
 {
-    public class AdminAddProductPageVM
+    public class AdminAddUpdateProductPageVM
     {
         //Refactorleri unutmayın!!!
         public Product Product { get; set; }

@@ -42,7 +42,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
 
         public ActionResult AddProduct()
         {
-            AdminAddProductPageVM apvm = new AdminAddProductPageVM
+            AdminAddUpdateProductPageVM apvm = new AdminAddUpdateProductPageVM
             {
                 Categories = _cRep.Select(x => new AdminCategoryVM
                 {
@@ -66,7 +66,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
 
         public ActionResult UpdateProduct(int id)
         {
-            AdminAddProductPageVM apvm = new AdminAddProductPageVM
+            AdminAddUpdateProductPageVM apvm = new AdminAddUpdateProductPageVM
             {
                 Categories = _cRep.Select(x=> new AdminCategoryVM 
                 {

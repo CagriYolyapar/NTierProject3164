@@ -1,0 +1,55 @@
+﻿@model Cart
+@{
+    ViewBag.Title = "CartPage";
+}
+
+<div class="jumbotron">
+    Odemeniz gereken toplam tutar => @Model.TotalPrice ... Siparişi onaylamak icin lütfen @Html.ActionLink("tıklayınız","ConfirmOrder")
+</div>
+
+
+
+
+<div class="row product-list">
+
+    @foreach (CartItem item in Model.Sepetim)
+    {
+
+        <div class="col-md-4">
+            <section class="panel">
+                <div class="pro-img-box">
+                    @if (item.ImagePath == null || item.ImagePath == "3" || item.ImagePath == "2" || item.ImagePath.Contains("nightlife"))
+                    {
+                        <img src="/Pictures/armor-holy-knight-medieval-wallpaper-preview.jpg" alt="Resim yok" width="100" height="300" title="@item.Name" />
+                    }
+                    else
+                    {
+                        <img src="@item.ImagePath" alt="Resim yok" width="100" height="300" title="@item.Name" />
+                    }
+
+                    <a href="@Url.Action("DeleteFromCart", new { id=item.ID})" class="adtocart">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </a>
+                 </div>
+
+                <div class="panel-body text-center">
+                    <h4>
+                        <a href="#" class="pro-title" title="@item.Name">
+                             @item.Name x @item.Amount
+                        </a>
+                    </h4>
+                    <p class="price"> @item.SubTotal</p>
+                </div>
+
+            </section>
+        </div>
+
+    }
+
+
+
+
+
+
+</div>
+

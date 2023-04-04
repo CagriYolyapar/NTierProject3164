@@ -1,0 +1,115 @@
+﻿@model PaginationVM
+@{
+    ViewBag.Title = "ShoppingList";
+}
+
+
+<h2 style="background-color:red">@TempData["sepetBos"]</h2>
+
+<section class="wrapper">
+    <!-- page start-->
+    <div class="row">
+        <div class="col-md-3">
+
+
+
+
+
+            <section class="panel">
+                <header class="panel-heading">
+                    Category
+                </header>
+                <div class="panel-body">
+                    <ul class="nav prod-cat">
+                        @foreach (Category item in Model.Categories)
+                        {
+                            <li style="padding-top:30px">  @Html.ActionLink(item.CategoryName, "ShoppingList", new { categoryID = item.ID }, new { @class = "btn btn-primary" })   </li>
+                        }
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+        <div class="col-md-9">
+            <section class="panel">
+                <div class="panel-body">
+
+
+                    <div class="pull-right">
+                        <ul class="pagination pagination-sm pro-page-list">
+
+                            @if (TempData["catID"] != null)
+                            {
+                                <li> @Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page, categoryID = TempData["catID"] }))     </li>
+                            }
+                            else
+                            {
+                            <li>
+                                @Html.PagedListPager(Model.PagedProducts,page=> Url.Action("ShoppingList", new {page}))
+                            </li>
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row product-list">
+
+
+                @foreach (Product item in Model.PagedProducts)
+                {
+
+                    <div class="col-md-4">
+                        <section class="panel">
+                            <div class="pro-img-box">
+
+                                @if (item.ImagePath == null || item.ImagePath == "3" || item.ImagePath == "2" || item.ImagePath.Contains("nightlife"))
+                                {
+                                    <img src="/Pictures/armor-holy-knight-medieval-wallpaper-preview.jpg" alt="Resim yok" width="100" height="300" title="@item.ProductName" />
+                                }
+                                else
+                                {
+                                    <img src="@item.ImagePath" alt="Resim yok" width="100" height="300" title="@item.ProductName" />
+                                }
+                                @*
+                                    
+                                Url.Action'in bize verdigi fayda,asagıdaki gibi belli durumlarda ActionLink kullanmak tasarımımıza uygun olmayabilir...
+                                    
+                                    
+                                    *@
+
+
+                                <a href="@Url.Action("AddToCart", new {id=item.ID})" class="adtocart">
+                                    <i class="icon-shopping-cart"></i>
+                                </a>
+                            </div>
+
+                            <div class="panel-body text-center">
+                                <h4>
+                                    <a href="#" class="pro-title" title="@item.ProductName">
+                                       @item.ProductName
+                                    </a>
+                                </h4>
+                                <p class="price">$@item.UnitPrice</p>
+                            </div>
+                        </section>
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- page end-->
+</section>
+
+@section Sepet{
+    
+    <li>
+        <a href="@Url.Action("CartPage","Shopping")"> <i class="icon-shopping-cart"></i>  Cart </a>
+    </li>
+    
+    }
