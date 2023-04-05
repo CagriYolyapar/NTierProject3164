@@ -4,7 +4,13 @@
 }
 
 
+
+
 <h2 style="background-color:red">@TempData["sepetBos"]</h2>
+
+@TempData["baglantiRed"]
+@TempData["odeme"]
+@TempData["sorun"]
 
 <section class="wrapper">
     <!-- page start-->
@@ -44,9 +50,9 @@
                             }
                             else
                             {
-                            <li>
-                                @Html.PagedListPager(Model.PagedProducts,page=> Url.Action("ShoppingList", new {page}))
-                            </li>
+                                <li>
+                                    @Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page }))
+                                </li>
                             }
 
 
@@ -74,11 +80,11 @@
                                     <img src="@item.ImagePath" alt="Resim yok" width="100" height="300" title="@item.ProductName" />
                                 }
                                 @*
-                                    
-                                Url.Action'in bize verdigi fayda,asagıdaki gibi belli durumlarda ActionLink kullanmak tasarımımıza uygun olmayabilir...
-                                    
-                                    
-                                    *@
+
+                                    Url.Action'in bize verdigi fayda,asagıdaki gibi belli durumlarda ActionLink kullanmak tasarımımıza uygun olmayabilir...
+
+
+                                *@
 
 
                                 <a href="@Url.Action("AddToCart", new {id=item.ID})" class="adtocart">
@@ -89,7 +95,7 @@
                             <div class="panel-body text-center">
                                 <h4>
                                     <a href="#" class="pro-title" title="@item.ProductName">
-                                       @item.ProductName
+                                        @item.ProductName
                                     </a>
                                 </h4>
                                 <p class="price">$@item.UnitPrice</p>
@@ -107,9 +113,9 @@
 </section>
 
 @section Sepet{
-    
+
     <li>
         <a href="@Url.Action("CartPage","Shopping")"> <i class="icon-shopping-cart"></i>  Cart </a>
     </li>
-    
-    }
+
+}

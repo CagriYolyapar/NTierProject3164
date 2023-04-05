@@ -54,7 +54,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             };
             return View(apvm);
         }
-        //todo : Resim sergilenme sistemi, validation
+        //todo :  validation
         [HttpPost]
         public ActionResult AddProduct(Product product,HttpPostedFileBase image,string fileName)
         {
@@ -80,9 +80,9 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             return View(apvm);
         }
 
-        //Todo: VM refactoring unutulmasın...
+        
 
-        //Todo: Odev Resim güncelleme
+       
         [HttpPost]
        public ActionResult UpdateProduct(Product product)
         {

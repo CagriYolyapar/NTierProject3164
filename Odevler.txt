@@ -6,9 +6,20 @@
 3=> UpdateProduct işleminde bir ürün güncellenecegi zaman eger kişi güncelleme kısmında bir resim secmediyse o ürünün eski resmi varsa  o kalsın, yeni resim sectiyse ürünün resmi güncellensin...Bir resim kaldır diye alan olusturun  eger o alan (input type='check') işaretliyse eski resim varsa da null hale gelsin...
 
 
+4 =>        //Admin'i engelleme durumu
+            //if (Session["admin"] != null)
+            //{
+            //    return RedirectToAction("RegisterNow");
+            //}
+
+5 => AppUser Crud işlemlerini yapın
+
+6 => 
+
 Kargo API => Sipariş Alma(Kargo olusturma)
 Kargo Sorgulama => (Nerede , ne zaman gelmesi tahmin ediliyor, Teslim edildi mi , Teslim alan kişi)
 
+7 => OrderPageVM'deki yapının sayfalandırılarak sepetSayfası'na entegre edilmesini istiyorum...
 
 ---
 Tedarikci API => Tedarik İstegi Alma     

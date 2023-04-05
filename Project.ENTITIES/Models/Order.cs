@@ -13,7 +13,9 @@ namespace Project.ENTITIES.Models
         public decimal TotalPrice { get; set; }
         public int? AppUserID { get; set; }
         public string NonMemberEmail { get; set; }
-        
+        public string NonMemberName { get; set; }
+      
+
 
 
 
