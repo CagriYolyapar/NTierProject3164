@@ -14,7 +14,7 @@
 
 5 => AppUser Crud işlemlerini yapın
 
-6 => 
+6 => Validation işlemlerini AdminPanel icin entegre edin...
 
 Kargo API => Sipariş Alma(Kargo olusturma)
 Kargo Sorgulama => (Nerede , ne zaman gelmesi tahmin ediliyor, Teslim edildi mi , Teslim alan kişi)
