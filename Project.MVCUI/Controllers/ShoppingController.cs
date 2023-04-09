@@ -208,3 +208,37 @@ namespace Project.MVCUI.Controllers
         
     }
 }
+
+
+
+/*
+ 
+ List<Category>  categoryNames = new List<Category> 
+{
+    "Beverages",
+    "Condiements"
+}
+ 
+ Session["categoryNames"] = categoryNames;
+
+
+
+@if(Session["categoryNames"] != null)
+
+{
+
+foreach(Category item in  Session["categoryNames"] as List<Category>)
+{
+ <p>    @item.CategoryName  </p>
+
+}
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */

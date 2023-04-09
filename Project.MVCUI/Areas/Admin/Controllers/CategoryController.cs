@@ -21,6 +21,30 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         public ActionResult ListCategories(int? id)
         {
 
+
+            List<Category> categoriesSimulation = new List<Category>
+            {
+                new Category
+                {
+                    CategoryName = "Deneme",
+                    Description = "..."
+                },
+                new Category
+                {
+                    CategoryName = "dasad",
+                    Description = "asdadas"
+                },
+                new Category
+                {
+                    CategoryName = "sadasdad",
+                    Description = "ddddd"
+                }
+            };
+
+            _cRep.AddRange(categoriesSimulation);
+
+
+
             List<AdminCategoryVM> categories;
             if(id == null)
             {

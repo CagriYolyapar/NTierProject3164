@@ -35,7 +35,7 @@ namespace Project.BLL.Repositories.IntRep
         IQueryable<X> Select<X>(Expression<Func<T, X>> exp);
 
         //Find Command
-        T Find(int id);
+        T Find(params int[] id);
 
         //LastData
         List<T> GetLastDatas(int number);

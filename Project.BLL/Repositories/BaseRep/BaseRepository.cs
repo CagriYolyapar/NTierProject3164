@@ -14,14 +14,14 @@ namespace Project.BLL.Repositories.BaseRep
 {
     public abstract class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
-        MyContext _db;
+        protected MyContext _db;
 
         public BaseRepository()
         {
             _db = DBTool.DBInstance;
         }
 
-        void Save()
+        protected void Save()
         {
             _db.SaveChanges();
         }
@@ -53,7 +53,7 @@ namespace Project.BLL.Repositories.BaseRep
         public void DeleteRange(List<T> list)
         {
             foreach (T item in list) Delete(item);
-            
+
         }
 
         public void Destroy(T item)
@@ -68,7 +68,7 @@ namespace Project.BLL.Repositories.BaseRep
             Save();
         }
 
-        public T Find(int id)
+        public T Find(params int[] id)
         {
             return _db.Set<T>().Find(id);
         }
@@ -95,7 +95,7 @@ namespace Project.BLL.Repositories.BaseRep
 
         public List<T> GetLastDatas(int number)
         {
-            return _db.Set<T>().OrderByDescending(x=>x.CreatedDate).Take(number).ToList();
+            return _db.Set<T>().OrderByDescending(x => x.CreatedDate).Take(number).ToList();
         }
 
         public List<T> GetPassives()
@@ -113,15 +113,20 @@ namespace Project.BLL.Repositories.BaseRep
             return _db.Set<T>().Select(exp).ToList();
         }
 
+
+
         public IQueryable<X> Select<X>(Expression<Func<T, X>> exp)
         {
-            return _db.Set<T>().Select(exp); 
+            return _db.Set<T>().Select(exp);
         }
 
-        public void Update(T item)
+
+       
+
+        public virtual void Update(T item)
         {
-            item.Status = ENTITIES.Enums.DataStatus.Updated;    
-            item.ModifiedDate = DateTime.Now;   
+            item.Status = ENTITIES.Enums.DataStatus.Updated;
+            item.ModifiedDate = DateTime.Now;
             T toBeUpdated = Find(item.ID);
             _db.Entry(toBeUpdated).CurrentValues.SetValues(item);
             Save();
@@ -130,7 +135,7 @@ namespace Project.BLL.Repositories.BaseRep
         public void UpdateRange(List<T> list)
         {
             foreach (T item in list) Update(item);
-            
+
         }
 
         public List<T> Where(Expression<Func<T, bool>> exp)
